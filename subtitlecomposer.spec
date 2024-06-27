@@ -32,7 +32,7 @@ BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(icu-io)
 BuildRequires:	pkgconfig(libxine)
 BuildRequires:	pkgconfig(mpv)
-BuildRequires: pkgconfig(OpenSSL)
+BuildRequires: pkgconfig(openssl)
 
 Requires:	kf6-kio
 Requires:	plasma6-kio-extras
