@@ -62,12 +62,12 @@ Features:
 %autosetup -p1
 
 %build
-%cmake_kf6 -DQT_MAJOR_VERSION:BOOL=6 \
+%cmake -DQT_MAJOR_VERSION:BOOL=6 \
            -DKDE_INSTALL_LIBDIR=%{_lib}
-%cmake_build
+%make_build
 
 %install
-%cmake_install
+%make_install -C build
 
 %find_lang %{name}
 
@@ -77,10 +77,10 @@ find %{buildroot} -name '*.h' -delete
 %files -f %{name}.lang
 %doc ChangeLog README.md
 %license LICENSE
-%{_kf6_bindir}/%{name}
-%{_kf6_applicationdir}/org.kde.%{name}.desktop
-%config(noreplace) %{_kf6_sysconfdir}/xdg/%{name}rc
-%{_kf6_datadir}/%{name}/
-%{_kf6_iconsdir}/hicolor/*/*/*.png
-%{_kf6_datadir}/mime/packages/%{name}.xml
-%{_kf6_metainfodir}/org.kde.subtitlecomposer.appdata.xml
+#{_kf6_bindir}/%{name}
+#{_kf6_applicationdir}/org.kde.%{name}.desktop
+#config(noreplace) %{_kf6_sysconfdir}/xdg/%{name}rc
+#{_kf6_datadir}/%{name}/
+#{_kf6_iconsdir}/hicolor/*/*/*.png
+#{_kf6_datadir}/mime/packages/%{name}.xml
+#{_kf6_metainfodir}/org.kde.subtitlecomposer.appdata.xml
